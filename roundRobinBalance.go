@@ -10,12 +10,11 @@ type RoundRobinBalance struct {
 	rss      []string
 }
 
-func (r *RoundRobinBalance) Add(params ...string) error {
-	if len(params) == 0 {
-		return errors.New("at least one server")
+func (r *RoundRobinBalance) Add(params string) error {
+	if params == "" {
+		return errors.New("please input one server")
 	}
-	addr := params[0]
-	r.rss = append(r.rss, addr)
+	r.rss = append(r.rss, params)
 	return nil
 }
 func (r *RoundRobinBalance) Next() string {
@@ -39,7 +38,8 @@ func main() {
 	r.Add("127.0.0.1:82")
 	r.Add("127.0.0.1:83")
 	r.Add("127.0.0.1:84")
+	r.Add("127.0.0.1:85")
 	for i := 0; i < 10; i++ {
-		fmt.Printf("%d %s\n", i, r.Next())
+		fmt.Printf("%d -------> %s\n", i, r.Next())
 	}
 }
