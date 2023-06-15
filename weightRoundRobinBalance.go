@@ -74,6 +74,6 @@ func main() {
 	wrb.Add("172.0.0.1:8002", "2")
 	wrb.Add("172.0.0.1:8003", "1")
 	for i := 0; i < 7; i++ {
-		fmt.Printf("%s\n", wrb.Next())
+		fmt.Printf("%s %d\n", wrb.Next(), wrb.curIndex)
 	}
 }
