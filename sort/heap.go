@@ -41,6 +41,7 @@ func (heap *Heap) Insert(n int) {
 	heap.data[heap.count] = n
 	i := heap.count
 	//i 有父结点 ; 大顶堆
+	//从下往上堆化
 	for i/2 > 0 && heap.data[i] > heap.data[i/2] {
 		heap.data[i], heap.data[i/2] = heap.data[i/2], heap.data[i]
 		i = i / 2
