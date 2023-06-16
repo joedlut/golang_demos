@@ -46,7 +46,7 @@ func heapSort(arr []int, n int) {
 	for k >= 1 {
 		swap(arr, 1, k)
 		k--
-		//从下往上
+		//从上往下 调整
 		heapOnce(arr, k, 1)
 	}
 }
