@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func swap(arr []int, i, j int) {
 	arr[i], arr[j] = arr[j], arr[i]
@@ -41,9 +44,10 @@ func heapOnce(arr []int, n, i int) {
 func heapSort(arr []int, n int) {
 	//建堆
 	buildHeap(arr, n)
-	fmt.Println(arr)
+	//fmt.Println(arr)
 	k := n
 	for k >= 1 {
+		// 第一个节点跟 最后一个节点交换位置
 		swap(arr, 1, k)
 		k--
 		//从上往下 调整
@@ -52,7 +56,11 @@ func heapSort(arr []int, n int) {
 }
 
 func main() {
-	arr := []int{0, 20, 2, 45, 6, 88}
-	heapSort(arr, 5)
+	arr := make([]int, 1)
+	for i := 1; i <= 10; i++ {
+		arr = append(arr, rand.Intn(100))
+	}
+	fmt.Println(arr)
+	heapSort(arr, 10)
 	fmt.Println(arr)
 }

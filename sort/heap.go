@@ -26,6 +26,7 @@ type Heap struct {
 
 func New(capacity int) *Heap {
 	return &Heap{
+		//堆中现有的元素个数
 		count:  0,
 		maxNum: capacity,
 		data:   make([]int, capacity),
