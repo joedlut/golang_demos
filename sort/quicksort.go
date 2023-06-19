@@ -68,7 +68,7 @@ func quickSort(values []int, left int, right int) {
 }
 
 func main() {
-	arr := []int{1, 2, 30, 4, 51, 23, 45, 78, 10, 9, 23, 12}
+	arr := []int{-1, 2, 30, 4, 51, 23, 45, 78, 10, 9, 23, 12}
 	quickSort(arr, 0, len(arr)-1)
 	fmt.Println(arr)
 }
