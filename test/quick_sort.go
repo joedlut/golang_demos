@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+//调堆
+
 func HeapOnce(arr []int, n int, i int) {
 	for {
 		maxPos := i
@@ -21,11 +23,15 @@ func HeapOnce(arr []int, n int, i int) {
 	fmt.Println("break")
 }
 
+//建堆
+
 func BuildHeap(arr []int, n int) {
 	for i := n / 2; i >= 1; i-- {
 		HeapOnce(arr, n, i)
 	}
 }
+
+//堆排序，先建好堆，然后每次最后一个元素跟堆顶交换，排除最后一个元素，从堆顶往下调整
 
 func HeapSort(arr []int, n int) {
 	BuildHeap(arr, n)
