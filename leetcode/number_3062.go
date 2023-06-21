@@ -9,6 +9,7 @@ import "fmt"
 链接：https://leetcode.cn/problems/three-steps-problem-lcci
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
+//f(n) = f(n-1) + f(n-2) + f(n-3)
 func waysToStep(n int) int {
 	//m := make(map[int]int)
 	//m[0] = 1
