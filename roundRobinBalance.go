@@ -22,6 +22,7 @@ func (r *RoundRobinBalance) Next() string {
 		return ""
 	}
 	lens := len(r.rss)
+	// 环
 	if r.curIndex > lens {
 		r.curIndex = 0
 	}
