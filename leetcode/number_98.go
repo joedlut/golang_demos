@@ -28,12 +28,6 @@ import "math"
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 func isValidBST(root *TreeNode) bool {
 	return validate(root, math.MinInt64, math.MaxInt64)
 }

@@ -7,13 +7,7 @@ Definition for a binary tree node.
 
 */
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-//递归算法，不推荐
+// 递归算法，不推荐
 func inorderTraversal(root *TreeNode) []int {
 	nums := make([]int, 0)
 	if root == nil {
