@@ -24,10 +24,33 @@ package main
 链接：https://leetcode.cn/problems/longest-substring-without-repeating-characters
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
+//滑动窗口
+
 func lengthOfLongestSubstring(s string) int {
-	return 0
-
+	m := make(map[byte]int)
+	n := len(s)
+	rk, ans := -1, 0
+	for i := 0; i < n; i++ {
+		//向右移动做指针
+		if i != 0 {
+			delete(m, s[i-1])
+		}
+		//如果字符集合中没有重复就继续移动右指针
+		for rk+1 < n && m[s[rk+1]] == 0 {
+			m[s[rk+1]]++
+			rk++
+		}
+		ans = max(ans, rk-i+1)
+	}
+	return ans
 }
-func main() {
+func max(x, y int) int {
+	if x > y {
+		return x
+	} else {
+		return y
+	}
+}
 
+func main() {
 }
