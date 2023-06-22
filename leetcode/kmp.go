@@ -11,7 +11,7 @@ import "fmt"
 func subStr(haystack string, needle string) int {
 	m, n := len(needle), len(haystack)
 	next := make([]int, m)
-	//求解next 数据，直接背过模板
+	//求解next 数组，直接背过模板
 	for i, j := 1, 0; i < m; i++ {
 		for j > 0 && needle[i] != needle[j] {
 			j = next[j-1]
