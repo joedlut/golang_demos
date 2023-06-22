@@ -8,6 +8,10 @@ package main
 一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过 1 。
 */
 
+//从上往下递归
+//左右子树都是平衡二叉树
+//左右子树的高度差不超过1
+
 func isBalanced(root *TreeNode) bool {
 	if root == nil {
 		return true
@@ -15,6 +19,8 @@ func isBalanced(root *TreeNode) bool {
 	return isBalanced(root.Left) && isBalanced(root.Right) && abs(Height(root.Right)-Height(root.Left)) <= 1
 
 }
+
+//计算树的高度
 
 func Height(root *TreeNode) int {
 	if root == nil {
