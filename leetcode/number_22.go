@@ -2,20 +2,25 @@ package main
 
 import "fmt"
 
-func generateAll(str string, n int) (strList []string) {
+func generateParenthesis(n int) []string {
+	str := ""
+	strList := make([]string, 0)
+	generateAll(str, 2*n, &strList)
+	return strList
+}
+
+func generateAll(str string, n int, strList *[]string) {
 	if len(str) == n {
 		if Validate(str) {
-			strList = append(strList, str)
-			fmt.Println(str)
+			*strList = append(*strList, str)
 		}
-		return strList
+		return
 	}
 	str += "("
-	generateAll(str, n)
+	generateAll(str, n, strList)
 	str = str[:len(str)-1]
 	str += ")"
-	generateAll(str, n)
-	return nil
+	generateAll(str, n, strList)
 }
 
 func Match(m, n byte) bool {
@@ -56,6 +61,5 @@ func Validate(s string) bool {
 }
 
 func main() {
-	str := ""
-	fmt.Println(generateAll(str, 6))
+	fmt.Println(generateParenthesis(6))
 }
