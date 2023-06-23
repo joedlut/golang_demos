@@ -41,6 +41,7 @@ func addTwoNumbers1(l1 *ListNode, l2 *ListNode) *ListNode {
 	var carry int = 0
 	// 或 ||
 	for ; l1 != nil || l2 != nil; {
+		//局部变量，每次循环值都更新
 		var n1, n2 int
 		if l1 != nil {
 			n1 = l1.Val
