@@ -33,7 +33,7 @@ P     I
 
 输入：s = "A", numRows = 1
 输出："A"
- 
+
 
 提示：
 
@@ -44,6 +44,8 @@ s 由英文字母（小写和大写）、',' 和 '.' 组成
 来源：力扣（LeetCode）
 链接：https://leetcode.cn/problems/zigzag-conversion
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+这个题包装的很唬人，但是实际就是给s的每一位标记就好了：假设numRows为4，那就是那s每一位的行数就是：1234321234321
 */
 
 func convert(s string, numRows int) string {
