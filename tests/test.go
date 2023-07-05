@@ -7,14 +7,7 @@ func insert1(arr []int, value int) {
 }
 
 func main() {
-	arr := []int{0}
-	fmt.Println(arr)
-	insert1(arr, 10)
-	fmt.Println(arr)
-	arr = append(arr, 10)
-	fmt.Println(arr)
-
-	arr1 := make([]int, 1, 100)
-	//arr1[10] = 100
-	fmt.Println(arr1)
+	a := 0.2
+	b := 0.1
+	fmt.Println(a + b)
 }
