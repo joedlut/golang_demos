@@ -44,7 +44,7 @@ func hasCycle(head *ListNode) bool {
 	}
 	slow, fast := head, head.Next
 	for slow != fast {
-		//一个结点 或者两个结点的情况
+		//一个结点 或者两个结点的情况  快的先到nil 就不存在环
 		if fast == nil || fast.Next == nil {
 			return false
 		}
